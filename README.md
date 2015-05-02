@@ -2,62 +2,55 @@ Builder - Develop software for GNOME
 ====================================
 
 Bugs: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-builder
+
 Design: https://live.gnome.org/Design/Apps/Builder
+
 Download: https://download.gnome.org/sources/gnome-builder/
+
 Git: http://git.gnome.org/browse/gnome-builder
+
 Website: https://wiki.gnome.org/Apps/Builder
+
 IRC: irc.gimp.net #gnome-builder
 
 ----
 
-Builder attempts to be an IDE for writing software for GNOME. It does not try
-to be a generic IDE, but one specialized for writing GNOME software. We believe
-that this focus will help us to build something great.
+Builder attempts to be an IDE for writing software for GNOME. It does not try to be a generic IDE, but one specialized for writing GNOME software. We believe that this focus will help us to build something great.
 
-If you would like to help in this effort, join our IRC channel and we will help
-you find something to work on.
+If you would like to help in this effort, join our IRC channel and we will help you find something to work on.
 
-Builder is written in C, but some aspects of Builder may be written in another
-language if it makes sense.
+Builder is written in C, but some aspects of Builder may be written in another language if it makes sense.
 
 ----
 
-Builder is developed in conjunction with GNOME releases. This means that we
-often contribute to, and depend on, features being developed in other GNOME
-modules.
+Builder is developed in conjunction with GNOME releases. This means that we often contribute to, and depend on, features being developed in other GNOME modules.
 
 ----
 
-Builder can be built from tarball releases using the traditional autotools
-manner.
+Builder can be built from tarball releases using the traditional autotools manner.
 
-  ./configure --prefix=/usr
-  make
-  sudo make install
-  sudo libtool --finish /usr/lib
+    ./configure --prefix=/usr
+    make
+    sudo make install
+    sudo libtool --finish /usr/lib
 
 ----
 
-Alternatively, you can build Builder from git using jhbuild. If you are
-unfamiliar with jhbuild, the following will help you get started.
+Alternatively, you can build Builder from git using jhbuild. If you are unfamiliar with jhbuild, the following will help you get started.
 
-  git clone git://git.gnome.org/jhbuild.git
-  cd jhbuild
-  ./autogen.sh
-  make
-  make install
-  jhbuild -m gnome-world build gnome-builder
-  jhbuild run gnome-builder
+    git clone git://git.gnome.org/jhbuild.git
+    cd jhbuild
+    ./autogen.sh
+    make
+    make install
+    jhbuild -m gnome-world build gnome-builder
+    jhbuild run gnome-builder
 
-If you have problems building or running Builder, please contact us on IRC
-(link is at the top of this file) and we will help you out.
+If you have problems building or running Builder, please contact us on IRC (link is at the top of this file) and we will help you out.
 
 We hope to have VM images that can be used for testing in the near future.
 
 ----
 
-Builder is licensed under the GNU General Public License as published by the
-Free Software Foundation, either version 3 of the License, or (at your option)
-any later version. Some files are individually licensed under alternative
-licenses such as LGPL-2.1+ and LGPL-3.0.
+Builder is licensed under the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version. Some files are individually licensed under alternative licenses such as LGPL-2.1+ and LGPL-3.0.
 
