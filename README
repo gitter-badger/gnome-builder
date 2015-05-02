@@ -34,6 +34,7 @@ manner.
   ./configure --prefix=/usr
   make
   sudo make install
+  sudo libtool --finish /usr/lib
 
 ----
 
