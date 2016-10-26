@@ -29,9 +29,8 @@ nodist_libdebugger_plugin_la_SOURCES = \
 	gbp-debugger-resources.c \
 	gbp-debugger-resources.h
 
-libdebugger_plugin_la_CPPFLAGS = $(PLUGIN_CPPFLAGS) $(PLUGIN_CFLAGS) $(DEBUGGER_CFLAGS)
-libdebugger_plugin_la_CFLAGS = $(PLUGIN_CFLAGS) $(DEBUGGER_CFLAGS)
-libdebugger_plugin_la_LIBADD = $(PLUGIN_LIBS) $(DEBUGGER_LIBS)
+libdebugger_plugin_la_CPPFLAGS = $(PLUGIN_CFLAGS) $(DEBUGGER_CFLAGS) $(GLIBMM_CFLAGS) $(NEMIVER_CFLAGS)
+libdebugger_plugin_la_LIBADD = $(PLUGIN_LIBS) $(DEBUGGER_LIBS) $(GLIBMM_LIBS) $(NEMIVER_LIBS)
 libdebugger_plugin_la_LDFLAGS = $(PLUGIN_LDFLAGS) $(DEBUGGER_LDFLAGS)
 
 glib_resources_c = gbp-debugger-resources.c
