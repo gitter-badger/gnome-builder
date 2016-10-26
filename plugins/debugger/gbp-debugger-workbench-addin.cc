@@ -53,7 +53,7 @@ debugger_run_handler (IdeRunManager *run_manager,
                       IdeRunner     *runner,
                       gpointer       user_data)
 {
-  GbpDebuggerWorkbenchAddin *self = user_data;
+  GbpDebuggerWorkbenchAddin *self = (GbpDebuggerWorkbenchAddin *)user_data;
 
   IDE_ENTRY;
 
@@ -115,12 +115,12 @@ gbp_debugger_workbench_addin_load (IdeWorkbenchAddin *addin,
                                g_object_ref (self),
                                g_object_unref);
 
-  self->perspective = g_object_new (GBP_TYPE_DEBUGGER_PERSPECTIVE,
+  self->perspective = (GbpDebuggerPerspective*)g_object_new (GBP_TYPE_DEBUGGER_PERSPECTIVE,
                                     "visible", TRUE,
                                     NULL);
   ide_workbench_add_perspective (workbench, IDE_PERSPECTIVE (self->perspective));
 
-  self->exec_controls = g_object_new (GTK_TYPE_BOX,
+  self->exec_controls = (GtkBox*)g_object_new (GTK_TYPE_BOX,
                                       "orientation", GTK_ORIENTATION_HORIZONTAL,
                                       NULL);
   ide_widget_add_style_class (GTK_WIDGET (self->exec_controls), "linked");
@@ -129,7 +129,7 @@ gbp_debugger_workbench_addin_load (IdeWorkbenchAddin *addin,
 #define ADD_BUTTON(action_name, icon_name, tooltip_text) \
   G_STMT_START { \
     GtkButton *button; \
-    button = g_object_new (GTK_TYPE_BUTTON, \
+    button = (GtkButton*)g_object_new (GTK_TYPE_BUTTON, \
                            "action-name", action_name, \
                            "child", g_object_new (GTK_TYPE_IMAGE, \
                                                   "icon-name", icon_name, \
@@ -146,7 +146,7 @@ gbp_debugger_workbench_addin_load (IdeWorkbenchAddin *addin,
   ADD_BUTTON ("debugger.execute-from-cursor", "debug-execute-to-cursor-symbolic",   _("Execute to cursor"));
   ADD_BUTTON ("debugger.execute-to-cursor",   "debug-execute-from-cursor-symbolic", _("Execute from cursor"));
 
-  self->step_controls = g_object_new (GTK_TYPE_BOX,
+  self->step_controls = (GtkBox*)g_object_new (GTK_TYPE_BOX,
                                       "orientation", GTK_ORIENTATION_HORIZONTAL,
                                       NULL);
   ide_widget_add_style_class (GTK_WIDGET (self->step_controls), "linked");
@@ -214,7 +214,7 @@ step_in_activate (GSimpleAction *action,
                   GVariant      *param,
                   gpointer       user_data)
 {
-  GbpDebuggerWorkbenchAddin *self = user_data;
+  GbpDebuggerWorkbenchAddin *self = (GbpDebuggerWorkbenchAddin *)user_data;
 
   g_assert (GBP_IS_DEBUGGER_WORKBENCH_ADDIN (self));
 
@@ -225,7 +225,7 @@ step_out_activate (GSimpleAction *action,
                    GVariant      *param,
                    gpointer       user_data)
 {
-  GbpDebuggerWorkbenchAddin *self = user_data;
+  GbpDebuggerWorkbenchAddin *self = (GbpDebuggerWorkbenchAddin *)user_data;
 
   g_assert (GBP_IS_DEBUGGER_WORKBENCH_ADDIN (self));
 
@@ -236,7 +236,7 @@ step_over_activate (GSimpleAction *action,
                     GVariant      *param,
                     gpointer       user_data)
 {
-  GbpDebuggerWorkbenchAddin *self = user_data;
+  GbpDebuggerWorkbenchAddin *self = (GbpDebuggerWorkbenchAddin *)user_data;
 
   g_assert (GBP_IS_DEBUGGER_WORKBENCH_ADDIN (self));
 
@@ -247,7 +247,7 @@ continue_action (GSimpleAction *action,
                  GVariant      *param,
                  gpointer       user_data)
 {
-  GbpDebuggerWorkbenchAddin *self = user_data;
+  GbpDebuggerWorkbenchAddin *self = (GbpDebuggerWorkbenchAddin *)user_data;
 
   g_assert (GBP_IS_DEBUGGER_WORKBENCH_ADDIN (self));
 
@@ -258,7 +258,7 @@ execute_to_cursor_action (GSimpleAction *action,
                           GVariant      *param,
                           gpointer       user_data)
 {
-  GbpDebuggerWorkbenchAddin *self = user_data;
+  GbpDebuggerWorkbenchAddin *self = (GbpDebuggerWorkbenchAddin *)user_data;
 
   g_assert (GBP_IS_DEBUGGER_WORKBENCH_ADDIN (self));
 
@@ -269,7 +269,7 @@ execute_from_cursor_action (GSimpleAction *action,
                             GVariant      *param,
                             gpointer       user_data)
 {
-  GbpDebuggerWorkbenchAddin *self = user_data;
+  GbpDebuggerWorkbenchAddin *self = (GbpDebuggerWorkbenchAddin *)user_data;
 
   g_assert (GBP_IS_DEBUGGER_WORKBENCH_ADDIN (self));
 

@@ -21,7 +21,7 @@ libdebugger_plugin_la_SOURCES = \
 	gbp-debugger-plugin.c \
 	gbp-debugger-service.c \
 	gbp-debugger-service.h \
-	gbp-debugger-workbench-addin.c \
+	gbp-debugger-workbench-addin.cc \
 	gbp-debugger-workbench-addin.h \
 	$(NULL)
 
@@ -29,6 +29,7 @@ nodist_libdebugger_plugin_la_SOURCES = \
 	gbp-debugger-resources.c \
 	gbp-debugger-resources.h
 
+libdebugger_plugin_la_CPPFLAGS = $(PLUGIN_CPPFLAGS) $(PLUGIN_CFLAGS) $(DEBUGGER_CFLAGS)
 libdebugger_plugin_la_CFLAGS = $(PLUGIN_CFLAGS) $(DEBUGGER_CFLAGS)
 libdebugger_plugin_la_LIBADD = $(PLUGIN_LIBS) $(DEBUGGER_LIBS)
 libdebugger_plugin_la_LDFLAGS = $(PLUGIN_LDFLAGS) $(DEBUGGER_LDFLAGS)

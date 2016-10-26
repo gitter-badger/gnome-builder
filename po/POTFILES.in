@@ -136,7 +136,7 @@ plugins/create-project/gbp-create-project-widget.ui
 plugins/debugger/gbp-debugger-perspective.c
 plugins/debugger/gbp-debugger-perspective.ui
 plugins/debugger/gbp-debugger-service.c
-plugins/debugger/gbp-debugger-workbench-addin.c
+plugins/debugger/gbp-debugger-workbench-addin.cc
 plugins/devhelp/gbp-devhelp-panel.c
 plugins/file-search/gb-file-search-provider.c
 plugins/fpaste/fpaste_plugin/gtk/menus.ui
